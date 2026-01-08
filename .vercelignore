@@ -1,0 +1,30 @@
+# Fichiers à ignorer lors du déploiement Vercel
+
+# Documentation (optionnel - décommentez si vous ne voulez pas déployer la doc)
+# *.md
+# !README.md
+
+# Scripts de test local
+test-local.sh
+
+# Fichiers système
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Editeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary
+*.tmp
+.cache/
+
