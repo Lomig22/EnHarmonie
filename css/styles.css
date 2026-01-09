@@ -164,7 +164,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../images/piano-keys-placeholder.svg') center/cover no-repeat;
+    background: url('../images/piano-keys-placeholder.jpg') center/cover no-repeat;
     background-attachment: fixed;
     overflow: hidden;
 }
