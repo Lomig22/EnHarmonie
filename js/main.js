@@ -61,15 +61,24 @@ window.addEventListener('scroll', () => {
 // TARIFS TOGGLE (À l'unité / Mensuel)
 // ========================================
 
-document.addEventListener('DOMContentLoaded', () => {
+function initTarifsToggle() {
     const toggleBtns = document.querySelectorAll('.toggle-btn');
     const tarifsUnite = document.querySelector('.tarifs-unite');
     const tarifsMensuel = document.querySelector('.tarifs-mensuel');
 
+    console.log('Toggle init:', {
+        buttons: toggleBtns.length,
+        unite: tarifsUnite ? 'found' : 'not found',
+        mensuel: tarifsMensuel ? 'found' : 'not found'
+    });
+
     if (toggleBtns.length > 0 && tarifsUnite && tarifsMensuel) {
         toggleBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
                 const type = btn.getAttribute('data-type');
+                
+                console.log('Toggle clicked:', type);
                 
                 // Mettre à jour les boutons
                 toggleBtns.forEach(b => b.classList.remove('active'));
@@ -85,8 +94,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+        console.log('Toggle initialized successfully');
+    } else {
+        console.error('Toggle initialization failed - elements not found');
     }
-});
+}
+
+// Essayer d'initialiser immédiatement
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTarifsToggle);
+} else {
+    initTarifsToggle();
+}
 
 // ========================================
 // SMOOTH SCROLL
