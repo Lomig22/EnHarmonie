@@ -514,6 +514,39 @@ a:hover {
 }
 
 /* ========================================
+   SECTION À PROPOS - AMÉLIORATIONS
+   ======================================== */
+
+.about-section-block {
+    margin: var(--spacing-md) 0;
+}
+
+.about-section-block h3 {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.program-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.program-columns ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+.highlight-note {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-top: var(--spacing-sm);
+}
+
+/* ========================================
    SECTION TARIFS
    ======================================== */
 
@@ -526,11 +559,58 @@ a:hover {
     text-align: center;
 }
 
+/* Toggle Switch */
+.tarifs-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: var(--spacing-lg) auto;
+    max-width: 400px;
+    background: var(--color-dark-lighter);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: none;
+    color: var(--color-white-off);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border-radius: 50px;
+    position: relative;
+}
+
+.toggle-btn:hover {
+    color: var(--color-gold);
+}
+
+.toggle-btn.active {
+    background: var(--color-gold);
+    color: var(--color-dark);
+    font-weight: 500;
+}
+
 .tarifs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.tarifs-grid.active {
+    opacity: 1;
+    max-height: 2000px;
 }
 
 .tarif-card {
@@ -1109,6 +1189,21 @@ a:hover {
     :root {
         --spacing-lg: 3rem;
         --spacing-xl: 4rem;
+    }
+    
+    .program-columns {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .tarifs-toggle {
+        max-width: 100%;
+        margin: var(--spacing-md) 0;
+    }
+    
+    .toggle-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
     }
     
     .nav-menu {

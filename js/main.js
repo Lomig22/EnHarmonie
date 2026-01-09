@@ -78,6 +78,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ========================================
+// TARIFS TOGGLE SWITCH
+// ========================================
+
+const toggleBtns = document.querySelectorAll('.toggle-btn');
+const tarifsUnite = document.querySelector('.tarifs-unite');
+const tarifsMensuel = document.querySelector('.tarifs-mensuel');
+
+toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const type = btn.getAttribute('data-type');
+        
+        // Mettre à jour les boutons
+        toggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Afficher/cacher les grilles
+        if (type === 'unite') {
+            tarifsUnite.classList.add('active');
+            tarifsMensuel.classList.remove('active');
+        } else {
+            tarifsMensuel.classList.add('active');
+            tarifsUnite.classList.remove('active');
+        }
+    });
+});
+
+// ========================================
 // FAQ ACCORDION
 // ========================================
 
