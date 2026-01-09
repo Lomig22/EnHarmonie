@@ -597,6 +597,17 @@ a:hover {
     font-weight: 500;
 }
 
+/* Grilles tarifs avec toggle */
+.tarifs-unite,
+.tarifs-mensuel {
+    display: none;
+}
+
+.tarifs-unite.active,
+.tarifs-mensuel.active {
+    display: grid;
+}
+
 .tarifs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
