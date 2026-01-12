@@ -327,38 +327,43 @@ document.querySelectorAll('[data-aos]').forEach((element) => {
 
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Récupérer les données du formulaire
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        type: document.getElementById('type').value,
-        message: document.getElementById('message').value
-    };
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
     
-    // Simulation d'envoi (à remplacer par votre logique d'envoi réelle)
-    console.log('Données du formulaire:', formData);
+    // Désactiver le bouton et afficher un état de chargement
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours...';
     
-    // Afficher un message de confirmation
-    alert('Merci pour votre message ! Je vous répondrai dans les plus brefs délais.');
-    
-    // Réinitialiser le formulaire
-    contactForm.reset();
-    
-    // TODO: Intégrer avec un service d'email (EmailJS, Formspree, etc.)
-    // Exemple avec EmailJS:
-    // emailjs.send("service_id", "template_id", formData)
-    //     .then(() => {
-    //         alert('Message envoyé avec succès !');
-    //         contactForm.reset();
-    //     })
-    //     .catch((error) => {
-    //         alert('Erreur lors de l\'envoi. Veuillez réessayer.');
-    //         console.error('Erreur:', error);
-    //     });
+    try {
+        const formData = new FormData(contactForm);
+        
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            // Succès
+            alert('✅ Merci pour votre message ! Je vous répondrai dans les plus brefs délais.');
+            contactForm.reset();
+        } else {
+            // Erreur du serveur
+            throw new Error('Erreur lors de l\'envoi');
+        }
+    } catch (error) {
+        console.error('Erreur:', error);
+        alert('❌ Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.');
+    } finally {
+        // Réactiver le bouton
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+    }
 });
 
 // Validation en temps réel
