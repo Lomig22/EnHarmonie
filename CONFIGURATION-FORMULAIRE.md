@@ -3,20 +3,22 @@
 ## 📧 Adresse Email Configurée
 `coursdepiano@enharmonieweb.com`
 
-## ✅ Activation de Formspree (Important !)
+## ✅ Activation de FormSubmit (Important !)
 
-Le formulaire de contact utilise **Formspree** pour envoyer les messages directement à votre adresse email.
+Le formulaire de contact utilise **FormSubmit.co** pour envoyer les messages directement à votre adresse email.
 
-### Étapes d'activation :
+### ⚠️ Étape d'activation OBLIGATOIRE :
 
-1. **Premier envoi** : La première fois qu'un visiteur soumet le formulaire, Formspree enverra un email de confirmation à `coursdepiano@enharmonieweb.com`
+**IMPORTANT** : La première fois qu'un visiteur soumet le formulaire, FormSubmit enverra un **email de confirmation** à `coursdepiano@enharmonieweb.com`.
+
+1. **Premier envoi** : Testez le formulaire vous-même sur https://en-harmonie.vercel.app/#contact
 
 2. **Vérification** : 
    - Ouvrez votre boîte mail `coursdepiano@enharmonieweb.com`
-   - Cherchez un email de `Formspree <noreply@formspree.io>`
-   - Cliquez sur le lien de confirmation dans l'email
+   - Cherchez un email de `FormSubmit <noreply@formsubmit.co>`
+   - **Cliquez sur le lien de confirmation** dans l'email
 
-3. **Activation terminée** : Une fois confirmé, tous les messages du formulaire seront automatiquement envoyés à votre adresse email.
+3. **Activation terminée** : Une fois confirmé, tous les futurs messages seront automatiquement envoyés à votre adresse email sans autre action requise.
 
 ## 🔧 Comment ça fonctionne
 
@@ -37,15 +39,14 @@ Vous recevrez un email contenant :
 - **Type de cours** : Particulier ou Comité d'Entreprise
 - **Message** détaillé
 
-## 🆓 Formspree - Plan Gratuit
+## 🆓 FormSubmit - Service Gratuit
 
-Le plan gratuit de Formspree offre :
-- ✅ 50 soumissions/mois
-- ✅ Pas de limite de formulaires
-- ✅ Protection anti-spam
-- ✅ Support email
-
-Si vous dépassez 50 messages par mois, vous pouvez passer à un plan payant ou utiliser une autre solution.
+FormSubmit.co offre :
+- ✅ **Illimité** : Pas de limite de soumissions
+- ✅ Pas d'inscription requise
+- ✅ Protection anti-spam intégrée
+- ✅ 100% gratuit pour toujours
+- ✅ Emails formatés en tableau HTML élégant
 
 ## 🔒 Sécurité
 
@@ -57,9 +58,10 @@ Si vous dépassez 50 messages par mois, vous pouvez passer à un plan payant ou 
 ## 🚨 En cas de problème
 
 Si le formulaire ne fonctionne pas :
-1. Vérifiez que vous avez bien confirmé l'email de Formspree
-2. Vérifiez vos spams/courrier indésirable
-3. Testez le formulaire vous-même sur https://en-harmonie.vercel.app/
+1. **VÉRIFIEZ D'ABORD** : Avez-vous confirmé l'email de FormSubmit ? (étape obligatoire)
+2. Vérifiez vos **spams/courrier indésirable** pour l'email de confirmation
+3. Testez le formulaire vous-même sur https://en-harmonie.vercel.app/#contact
+4. Après confirmation, attendez 1-2 minutes puis testez à nouveau
 
 ## 📞 Alternative : Contact Direct
 

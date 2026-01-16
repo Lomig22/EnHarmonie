@@ -327,43 +327,26 @@ document.querySelectorAll('[data-aos]').forEach((element) => {
 
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
+contactForm.addEventListener('submit', (e) => {
     const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
     
-    // Désactiver le bouton et afficher un état de chargement
+    // Validation basique avant envoi
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    if (!name || !email || !message) {
+        e.preventDefault();
+        alert('⚠️ Veuillez remplir tous les champs obligatoires.');
+        return;
+    }
+    
+    // Désactiver le bouton pour éviter les doubles soumissions
     submitBtn.disabled = true;
     submitBtn.textContent = 'Envoi en cours...';
     
-    try {
-        const formData = new FormData(contactForm);
-        
-        const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        
-        if (response.ok) {
-            // Succès
-            alert('✅ Merci pour votre message ! Je vous répondrai dans les plus brefs délais.');
-            contactForm.reset();
-        } else {
-            // Erreur du serveur
-            throw new Error('Erreur lors de l\'envoi');
-        }
-    } catch (error) {
-        console.error('Erreur:', error);
-        alert('❌ Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.');
-    } finally {
-        // Réactiver le bouton
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-    }
+    // Le formulaire sera soumis normalement (pas de e.preventDefault())
+    // FormSubmit.co gérera l'envoi et la redirection
 });
 
 // Validation en temps réel
