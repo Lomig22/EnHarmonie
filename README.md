@@ -1,8 +1,8 @@
-# 🎹 EnHarmonie
+# 🎹 Enharmonie
 
 Site vitrine premium pour professeur de piano - Design élégant, sombre et moderne.
 
-![EnHarmonie](https://img.shields.io/badge/Status-Production%20Ready-success)
+![Enharmonie](https://img.shields.io/badge/Status-Production%20Ready-success)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
@@ -21,7 +21,7 @@ Site vitrine premium pour professeur de piano - Design élégant, sombre et mode
 
 ## 📖 À propos
 
-EnHarmonie est un site vitrine one-page créé pour présenter les services d'un professeur de piano professionnel. Le design met l'accent sur l'élégance, l'intimité et le professionnalisme, avec une palette sombre et dorée inspirée de l'univers du piano classique.
+Enharmonie est un site vitrine one-page créé pour présenter les services d'un professeur de piano professionnel. Le design met l'accent sur l'élégance, l'intimité et le professionnalisme, avec une palette sombre et dorée inspirée de l'univers du piano classique.
 
 ## ✨ Fonctionnalités
 
